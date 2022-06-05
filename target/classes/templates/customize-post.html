@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="navbar :: header"></header>
+<div class = "container mt-5 mb-5">
+    <h1>Правка</h1>
+    <h3>Вы можете изменить информацию</h3>
+    <div th:each ="entity: ${post}">
+    <form method="post">
+
+        <input type="text" th:value = "${entity.username}" name = "username" placeholder="Пользователь" class="form-control"><br>
+        <textarea name = "post_text"  th:text = "${entity.post_text}" placeholder="Текст статьи" class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-outline-info">&#8634; Перезаписать</button>
+    </form>
+    </div>
+</div>
+</body>
+</html>

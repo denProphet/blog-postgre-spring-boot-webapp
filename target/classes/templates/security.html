@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="navbar :: header"></header>
+<main role="main">
+    <div class="container">
+        <section id="cover" class="min-vh-100">
+            <div id="cover-caption">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4 border-bottom">
+                            <h1 class="text-dark">&#128274;</h1>
+                            <div class="px-2">
+                                <form action="/login/process" method="post">
+                                    <div class="card-body">
+                                <div class="alert alert-secondary" role="alert">
+                                    <div class="form-group">
+                                        <label class="sr-only-focusable font-light">Ваш логин</label>
+                                        <input type="text"
+                                               class="form-control"
+                                               name="username"
+                                               pattern="[A-Za-z_0-9]{5,}"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only-focusable font-light">Ваш пароль</label>
+                                        <input type="password"
+                                               class="form-control"
+                                               name="password" min="8"
+                                               required>
+                                    </div>
+                                </div>
+                                        <button type="submit" class="btn btn-info btn-lg">Авторизация</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+</body>
+</html>

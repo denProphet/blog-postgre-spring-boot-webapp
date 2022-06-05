@@ -1,0 +1,16 @@
+
+<div th:fragment="header">
+        <nav class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+            <a class="p-2 text-dark" href="/main">Блоги и новости</a>
+            <span th:if="!${authorized}">
+                <a href="/login" class="btn btn-outline-secondary" role="button"><b>&#10563;</b>Авторизация</a>
+            </span>
+            <span th:if="${authorized}">
+                <a href="/main" class="btn btn-outline-dark" role="button"><b>&#9776;</b> Список блогов</a>
+                <a href="/logout" class="btn btn-outline-dark" role="button"><b>&#10563;</b> Выйти из аккаунта</a>
+                <a href="/main/add" class="btn btn-outline-info" role="button"><b>&#43;</b> Создать новый пост</a>
+
+            </span>
+        </nav>
+    </div>
+</div>

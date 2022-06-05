@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="navbar :: header"></header>
+<div class="container mt-5">
+    <h1>Блоги</h1>
+    <h2>Отображен список блогов</h2>
+    <div class="row">
+
+        <div class="col-md-4" th:each="entity: ${posts}">
+            <div class="card mb-4 shadow-sm">
+
+                <div class="card-body">
+
+                    <p th:text="${entity.username}" class="card-text font-weight-bold"/>
+                    <div class="alert alert-secondary" role="alert">
+                    <p th:text="${entity.post_text}" class="card-text"/>
+                    </div>
+                    <div class="alert alert-secondary" role="alert">
+                        <p th:text="Опубликовано" class="card-text font-weight-bold"/>
+                        <p th:text="${entity.publish_date}" class="card-text"/>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a th:href="'/main/' + ${entity.post_id}" class="btn btn-sm btn-outline-info">&#10148; Перейти</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

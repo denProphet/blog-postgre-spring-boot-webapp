@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="navbar :: header"></header>
+<div class="container mt-5">
+    <div th:each="entity: ${post}" class="alert alert-secondary mt-2">
+        <h1 th:text="${entity.username}"/>
+        <p th:text="${entity.post_text}"/>
+        <span th:if="${authorized}">
+            <a th:href="'/main/' + ${entity.post_id} + '/customize'" class="btn btn-outline-info" method="post">&#9998; Править статью</a><br><br>
+            <form th:action="'/main/' + ${entity.post_id} + '/delete'" th:method="post">
+                <button class="btn btn-outline-danger" type="submit">&#10134; Удалить статью</button>
+            </form>
+        </span>
+    </div>
+</div>
+</body>
+</html>

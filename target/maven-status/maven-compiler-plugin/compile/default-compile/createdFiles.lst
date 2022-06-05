@@ -1,0 +1,6 @@
+karazin/yarovoy/db/lab4/blog/entities/Post.class
+karazin/yarovoy/db/lab4/blog/controllers/HomeController.class
+karazin/yarovoy/db/lab4/blog/MyBlogApp.class
+karazin/yarovoy/db/lab4/blog/configuration/WebSecurityConfiguration.class
+karazin/yarovoy/db/lab4/blog/controllers/PostController.class
+karazin/yarovoy/db/lab4/blog/repository/PostRepository.class
